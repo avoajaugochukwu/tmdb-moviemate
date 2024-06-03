@@ -1,0 +1,11 @@
+@media (max-width: 600px) {
+  .card {
+   width: 300px;
+   margin-right: 100px;
+  } 
+  .details-header {
+   margin-right: 40px;
+  }
+ }
+ 
+ 

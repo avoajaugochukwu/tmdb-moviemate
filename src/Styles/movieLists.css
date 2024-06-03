@@ -1,0 +1,36 @@
+@media (max-width: 500px) {
+  .movie-conrtainer  {
+   margin-left: 10px;
+  }
+ }
+  
+ .details-button {
+   
+   transition: background-color 0.3s, color 0.3s, border 0.3s;
+ 
+ } 
+ 
+ .details-button:hover {
+   background-color: hsl(209, 53%, 78%);
+   color: black;
+   border: 1px solid #4B86BD;
+   animation: hoverEffect 0.7s ease-in-out infinite;
+ 
+ } 
+ 
+ 
+ 
+ @keyframes hoverEffect {
+   0% {
+     transform: scale(1);
+   }
+   50% {
+     transform: scale(1.1);
+   }
+   100% {
+     transform: scale(1);
+   }
+ 
+ }
+ 
+ 
