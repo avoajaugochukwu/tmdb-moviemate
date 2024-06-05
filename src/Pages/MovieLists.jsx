@@ -45,7 +45,7 @@ const MovieLists = () => {
       <div className="flex justify-center flex-col items-center ml-5">
       <h1 className="heading-text text-black font-extrabold text-2xl mt-3">Movie Lists</h1>
       <div className="relative">
-        <FontAwesomeIcon icon={faSearch} className="text-[#9FA9B4] absolute top-[28%] left-[180px] h-6" />
+        <FontAwesomeIcon icon={faSearch} className="text-[#9FA9B4] absolute top-[28%] left-[210px] h-6" />
       <input type="text" placeholder="Search movies" className="outline-none rounded-xl px-5 py-1 my-3 shadow-xl" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
       </div>
         
