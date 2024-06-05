@@ -2,10 +2,17 @@
  .movie-conrtainer  {
   margin-left: 10px;
  }
+ .movie-lists {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10px;
+  margin-left: 10px;
+ 
+ }
 }
  
 .details-button {
-  
   transition: background-color 0.3s, color 0.3s, border 0.3s;
 
 } 
