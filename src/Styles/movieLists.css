@@ -1,19 +1,24 @@
 @media (max-width: 500px) {
  .movie-conrtainer  {
-  margin-left: 10px;
-
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  margin-top: 10px;
+  
  } 
  
  .movie-lists {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
   justify-content: center;
   place-items: center;
   margin-top: 10px;
-  margin-left: 10px;
-  
  
- }
+ } 
+ .movie-lists img {
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ } 
+ 
 }
  
 .details-button {
