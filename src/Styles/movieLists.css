@@ -1,13 +1,17 @@
 @media (max-width: 500px) {
  .movie-conrtainer  {
   margin-left: 10px;
- }
+
+ } 
+ 
  .movie-lists {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   justify-content: center;
+  place-items: center;
   margin-top: 10px;
   margin-left: 10px;
+  
  
  }
 }
