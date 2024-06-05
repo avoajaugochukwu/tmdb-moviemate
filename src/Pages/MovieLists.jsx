@@ -40,7 +40,7 @@ const MovieLists = () => {
   } 
 
   return (
-    <main className=" min-h-screen w-full pb-10 bg-[#f5f5f5]">
+    <main className=" min-h-screen w-screen pb-10 bg-[#f5f5f5]">
       <Header />
       <div className="flex justify-center flex-col items-center ml-5">
       <h1 className="text-black font-extrabold text-2xl mt-3">Movie Lists</h1>
