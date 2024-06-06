@@ -68,12 +68,12 @@ const MovieLists = () => {
         {displayTenMovies?.map((movie) => (
         <div key={movie.id} className="movie-conrtainer justify-center bg-[#ffffff8b] rounded-lg shadow-lg w-[280px] h-[350px] mx-3 my-3">
           <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} className="w-full h-[260px] rounded-t-lg" />
-          <div className="flex flex-row gap-8 mt-3 ml-4">
+          <div className="detail flex flex-row gap-8 mt-3 ml-4">
           <Link to={`/movie/${movie.id}`} className="details-button bg-white text-sm text-[#2A303C] w-[100px] h-[30px] text-center pt-1 ml-5 mt-3  rounded-md">
             View details
           </Link>
          <button onClick={() => toggleFavoriteMovie(movie.id)}> 
-         <FontAwesomeIcon icon={faHeart} className={` h-8 w-10 pt-3 
+         <FontAwesomeIcon icon={faHeart} className={`heart  h-8 w-10 pt-3 
          ${favoriteMovies.includes(movie.id) ? "text-red-600" : "text-white" }` } />
         </button> 
           </div>
