@@ -66,7 +66,7 @@ const MovieLists = () => {
       <div className="movie-lists container grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-5 mt-5 ml-3 mr-5 justify-center place-items-center">
       {displayTenMovies.length === 0 && <p className="text-black text-center col-span-full font-semibold text-2xl">Movie not found</p>}
         {displayTenMovies?.map((movie) => (
-        <div key={movie.id} data-theme="dim" className="movie-conrtainer justify-center rounded-md shadow-inner grid p-3 w-[280px] h-[300px] mx-3 my-3">
+        <div key={movie.id} className="movie-conrtainer justify-center bg-[#F5D5A1] rounded-md shadow-lg grid p-3 w-[280px] h-[300px] mx-3 my-3">
           <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} className="w-[250px] h-[200px] rounded-sm" />
           <div className="grid grid-cols-2">
           <Link to={`/movie/${movie.id}`} className="details-button bg-white text-sm text-[#2A303C] w-[100px] h-[30px] text-center pt-1 ml-5 mt-3  rounded-md">

@@ -17,7 +17,7 @@
 }
 
 body { 
-  background-image: url("../src/assets/background-img.jpeg");
+  background-image: url("../src/assets/photo-bg-img.avif");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

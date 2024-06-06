@@ -7,7 +7,7 @@ const Homepage = () => {
   return (
     <> 
        <Headers /> 
-       <div className="w-screen h-[400px] bg-[#2A303C] border-b border-[#4B86BD] rounded-b-[80px] bg-opacity-80 shadow-xl">
+       <div className="w-screen h-[400px] bg-[#2A303C] border-b border-[#081d31] rounded-b-[80px] bg-opacity-80 shadow-xl">
         <div className="home-text lg:ml-32 lg:pt-20">
         <h1 className="text-5xl font-extrabold text-white">MovieMate</h1>
         <p className="text-[#CCBC5B] text-xl mt-3">Stream our newest movies and tv series.</p>
