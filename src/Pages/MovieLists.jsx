@@ -55,7 +55,7 @@ const MovieLists = () => {
     <main className=" min-h-screen min-w-full pb-10 bg-[#80878D]">
       <Header />
       <div className="flex justify-center flex-col items-center ml-5">
-      <h1 className="text-black font-extrabold text-2xl mt-3">Movie Lists</h1>
+      <h1 className="text-black font-extrabold text-2xl mt-2">Movie Lists</h1>
       <div className="relative">
         <FontAwesomeIcon icon={faSearch} className="text-[#9FA9B4] absolute top-[28%] left-[190px] h-6" />
       <input type="text" placeholder="Search movies" className="outline bg-white rounded-xl px-5 py-1 my-3 shadow-xl" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
@@ -63,17 +63,17 @@ const MovieLists = () => {
         
       </div>
     
-      <div className="movie-lists container grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 mt-5 ml-3 lg:pr-10 justify-center place-items-center">
+      <div className="movie-lists container grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 mt-2 ml-3 lg:pr-10 justify-center place-items-center">
       {displayTenMovies.length === 0 && <p className="text-black text-center col-span-full font-semibold text-2xl">Movie not found</p>}
         {displayTenMovies?.map((movie) => (
-        <div key={movie.id} className="movie-conrtainer justify-center bg-[#ffffff8b] rounded-md shadow-lg grid p-3 w-[280px] h-[300px] mx-3 my-3">
-          <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} className="w-[250px] h-[200px] rounded-sm" />
-          <div className="grid grid-cols-2">
+        <div key={movie.id} className="movie-conrtainer justify-center bg-[#ffffff8b] rounded-lg shadow-lg w-[280px] h-[350px] mx-3 my-3">
+          <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} className="w-full h-[260px] rounded-t-lg" />
+          <div className="flex flex-row gap-8 mt-3 ml-4">
           <Link to={`/movie/${movie.id}`} className="details-button bg-white text-sm text-[#2A303C] w-[100px] h-[30px] text-center pt-1 ml-5 mt-3  rounded-md">
             View details
           </Link>
          <button onClick={() => toggleFavoriteMovie(movie.id)}> 
-         <FontAwesomeIcon icon={faHeart} className={` h-8 w-10 mr-4 
+         <FontAwesomeIcon icon={faHeart} className={` h-8 w-10 pt-3 
          ${favoriteMovies.includes(movie.id) ? "text-red-600" : "text-white" }` } />
         </button> 
           </div>
