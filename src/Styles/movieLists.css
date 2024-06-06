@@ -27,9 +27,9 @@
 } 
 
 .details-button:hover {
-  background-color: hsl(209, 53%, 78%);
+  background-color: #e4e9ed;
   color: black;
-  border: 1px solid #4B86BD;
+  border: 1px solid #80878D;
   animation: hoverEffect 0.7s ease-in-out;
 
 } 

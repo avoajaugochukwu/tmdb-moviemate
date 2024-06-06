@@ -29,7 +29,7 @@ const Moviedetails = () => {
   }
   return (
     <>
-    <div className='text-black bg-[#F5D5A1] min-h-screen w-full pb-10'>
+    <div className='text-black bg-[#80878D] min-h-screen w-full pb-10'>
     <div className='justify-center items-center flex flex-col'>
 
     <h1 className='details-header text-center font-bold text-2xl pt-5'>Movies details</h1>
