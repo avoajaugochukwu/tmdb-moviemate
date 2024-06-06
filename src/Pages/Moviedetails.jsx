@@ -34,7 +34,7 @@ const Moviedetails = () => {
 
     <h1 className='details-header text-center font-bold text-2xl pt-5'>Movies details</h1>
      
-     <div className='card text-black bg-white lg:w-[700px] sm:w-[350px] ml-20 mt-5'>
+     <div className='card text-black bg-white lg:w-[700px] sm:w-[350px] ml-20 mt-5 shadow-lg'>
        {movieDetails && (
          <div className='card-body grid lg:md:grid-cols-2 sm:grid-cols-1 gap-6 text-sm'>
            <div> <img src={`https://image.tmdb.org/t/p/w500/${movieDetails.poster_path}`} alt={movieDetails.title} className='w-[380px] h-[300px] rounded-sm' /></div>

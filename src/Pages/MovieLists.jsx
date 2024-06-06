@@ -14,7 +14,7 @@ const MovieLists = () => {
   
   const { data, isLoading, error} = useQuery({
     queryFn: () => 
-      fetch("https://api.themoviedb.org/3/movie/popular?api_key=11eec6b26256cd542c6f92ff289594c5").then((res) => res.json()
+      fetch(`https://api.themoviedb.org/3/movie/popular?api_key=11eec6b26256cd542c6f92ff289594c5&page=${page}`).then((res) => res.json()
   ), 
   queryKey: ["movies", page], 
   refetchOnWindowFocus: true,
@@ -29,13 +29,12 @@ const MovieLists = () => {
 
   const { searchTerm, setSearchTerm } = useStore((state) => ({searchTerm: state.searchTerm, setSearchTerm: state.setSearchTerm})); 
   
-  const startIndex = (page - 1) * moviePerPage;
-  const endIndex = startIndex + moviePerPage;
-  const displayTenMovies = data?.results
+  
+  const displayMovies = data?.results
   ?.filter((movie) =>
     movie.title.toLowerCase().includes(searchTerm.toLowerCase())
   )
-  .slice(startIndex, endIndex);
+  .slice(0, moviePerPage);
 
   
   if (isLoading) {
@@ -64,11 +63,11 @@ const MovieLists = () => {
       </div>
     
       <div className="movie-lists container grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 mt-2 ml-3 lg:pr-10 justify-center place-items-center">
-      {displayTenMovies.length === 0 && <p className="text-black text-center col-span-full font-semibold text-2xl">Movie not found</p>}
-        {displayTenMovies?.map((movie) => (
+      {displayMovies.length === 0 && <p className="text-black text-center col-span-full font-semibold text-2xl">Movie not found</p>}
+        {displayMovies?.map((movie) => (
         <div key={movie.id} className="movie-conrtainer justify-center bg-[#ffffff8b] rounded-lg shadow-lg w-[280px] h-[350px] mx-3 my-3">
-          <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} className="w-full h-[260px] rounded-t-lg" />
-          <div className="detail flex flex-row gap-8 mt-3 ml-4">
+          <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} className="w-full h-[280px] rounded-t-lg" />
+          <div className="detail flex flex-row gap-8 mt-2 ml-4">
           <Link to={`/movie/${movie.id}`} className="details-button bg-white text-sm text-[#2A303C] w-[100px] h-[30px] text-center pt-1 ml-5 mt-3  rounded-md">
             View details
           </Link>
