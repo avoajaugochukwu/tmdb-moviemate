@@ -2,9 +2,9 @@ import { create } from "zustand";
 import { devtools, persist } from "zustand/middleware";
 
 const useStore = create(
-  devtools(
-    persist(
-      (set) => ({
+  devtools( //devtools for debugging
+    persist( //persist data in local storage
+      (set) => ({ //set function to update the store
         favoriteMovies: [], //movies that are favorited
       
         toggleFavoriteMovie: (movieId) => 
@@ -14,14 +14,14 @@ const useStore = create(
               : [...state.favoriteMovies, movieId],
           })),
           
-          searchTerm: "",
+          searchTerm: "", //search term for searching movies in the search bar
           setSearchTerm: (term) => set({
-            searchTerm: term
+            searchTerm: term 
           }),
          
-      }), {
-        name: "favorite-movies",
-        getStorage: () => localStorage,
+      }), 
+      {
+        name: "favorite-movies", //name of the store
       
       }
     )

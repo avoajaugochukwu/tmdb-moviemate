@@ -6,26 +6,38 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons"
 import { faSearch } from "@fortawesome/free-solid-svg-icons/faSearch"
 import "../Styles/movieLists.css"
 import Header from "../Layouts/Header"
+import { useState } from "react"
 
 const MovieLists = () => { 
-
+  const [page, setPage] = useState(1);
+  const moviePerPage = 4
+  
   const { data, isLoading, error} = useQuery({
     queryFn: () => 
       fetch("https://api.themoviedb.org/3/movie/popular?api_key=11eec6b26256cd542c6f92ff289594c5").then((res) => res.json()
   ), 
-  queryKey: ["movies"],
+  queryKey: ["movies", page], 
   refetchOnWindowFocus: true,
   refetchOnMount: true,
   refetchOnReconnect: true,
   staleTime: 1000 * 60 * 15,
-  });
+  }); 
 
   const favoriteMovies = useStore((state) => state.favoriteMovies);
-  const toggleFavoriteMovie = useStore((state) => state.toggleFavoriteMovie);
-  const { searchTerm, setSearchTerm } = useStore((state) => ({searchTerm: state.searchTerm, setSearchTerm: state.setSearchTerm}));
-  
-  const displayTenMovies = data?.results?.filter((movie) => movie.title.toLowerCase().includes(searchTerm.toLowerCase())).slice(0, 10)
 
+  const toggleFavoriteMovie = useStore((state) => state.toggleFavoriteMovie);
+
+  const { searchTerm, setSearchTerm } = useStore((state) => ({searchTerm: state.searchTerm, setSearchTerm: state.setSearchTerm})); 
+  
+  const startIndex = (page - 1) * moviePerPage;
+  const endIndex = startIndex + moviePerPage;
+  const displayTenMovies = data?.results
+  ?.filter((movie) =>
+    movie.title.toLowerCase().includes(searchTerm.toLowerCase())
+  )
+  .slice(startIndex, endIndex);
+
+  
   if (isLoading) {
     return <div className='text-white'>
     <span className="loading loading-spinner loading-xs"></span>
@@ -68,6 +80,27 @@ const MovieLists = () => {
         </div> 
       ))}
         
+      </div>
+
+      {/* Pagination */} 
+      <div className="flex justify-center mt-5">
+      <button
+          className="bg-white text-[#2A303C] px-3 py-1 mx-2 rounded-md shadow-md"
+          onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
+          disabled={page === 1}
+        >
+          Previous
+        </button>
+        <span className=" mx-2 my-2 text-red-500">
+          Page {page} / {data?.total_pages}
+        </span>
+        <button
+          className="bg-white text-[#2A303C] px-3 py-1 mx-2 rounded-md shadow-md"
+          onClick={() => setPage((prev) => prev + 1)}
+          disabled={page === data?.total_pages}
+        >
+          Next page
+        </button>
       </div>
     </main>
   )
