@@ -10,7 +10,7 @@ import { useState } from "react"
 
 const MovieLists = () => { 
   const [page, setPage] = useState(1);
-  const moviePerPage = 4
+  const moviePerPage = 20
   
   const { data, isLoading, error} = useQuery({
     queryFn: () => 
