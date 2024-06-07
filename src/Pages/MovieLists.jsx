@@ -62,7 +62,7 @@ const MovieLists = () => {
         
       </div>
     
-      <div className="movie-lists flex flex-wrap justify-center">
+      <div className="movie-lists flex flex-wrap justify-center mr-5">
       {displayMovies.length === 0 && <p className="text-black text-center col-span-full font-semibold text-2xl">Movie not found</p>}
         {displayMovies?.map((movie) => (
         <div key={movie.id} className="movie-conrtainer justify-center bg-[#ffffff8b] rounded-lg shadow-lg w-[280px] h-[350px] mx-3 my-3">
