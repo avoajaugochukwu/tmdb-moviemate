@@ -10,7 +10,7 @@ import { useState } from "react"
 
 const MovieLists = () => { 
   const [page, setPage] = useState(1);
-  const moviePerPage = 20
+  const moviePerPage = 16 //total movie per page
   
   const { data, isLoading, error} = useQuery({
     queryFn: () => 
@@ -62,7 +62,7 @@ const MovieLists = () => {
         
       </div>
     
-      <div className="movie-lists container grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 mt-2 ml-3 lg:pr-10 justify-center place-items-center">
+      <div className="movie-lists flex flex-wrap justify-center">
       {displayMovies.length === 0 && <p className="text-black text-center col-span-full font-semibold text-2xl">Movie not found</p>}
         {displayMovies?.map((movie) => (
         <div key={movie.id} className="movie-conrtainer justify-center bg-[#ffffff8b] rounded-lg shadow-lg w-[280px] h-[350px] mx-3 my-3">

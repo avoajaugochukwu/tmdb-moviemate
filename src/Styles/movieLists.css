@@ -17,6 +17,7 @@
   justify-content: center;
   place-items: center;
   margin-top: 10px;
+  width: 100%;
  
  } 
  .movie-lists img {
