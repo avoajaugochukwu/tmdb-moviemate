@@ -1,12 +1,13 @@
 import { useQuery } from "@tanstack/react-query"
-import useStore from "../store"
+import useStore from "../../store"
 import { Link } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome" 
 import { faHeart } from "@fortawesome/free-solid-svg-icons"
 import { faSearch } from "@fortawesome/free-solid-svg-icons/faSearch"
-import "../Styles/movieLists.css"
+import "../../Styles/movieLists.css"
 import Header from "../Layouts/Header"
 import { useState } from "react"
+import Footer from "../Layouts/Footer"
 
 const MovieLists = () => { 
   const [page, setPage] = useState(1);
@@ -51,13 +52,14 @@ const MovieLists = () => {
   } 
 
   return (
-    <main className=" min-h-screen min-w-full pb-10 bg-[#80878D] bg-gradient-to-r from-[#D1D3D4] via-[#adb4bb] to-[#a2a4a5]">
+    <>
+    <main className=" min-h-screen min-w-full pb-10">
       <Header />
-      <div className="flex justify-center flex-col items-center ml-5">
-      <h1 className="text-black font-extrabold text-2xl mt-2">Movie Lists</h1>
-      <div className="relative">
+      <div className="flex justify-start flex-col items-start ml-[63px]">
+      <h1 className="text-black font-extrabold text-2xl mt-2">Lists of movies</h1>
+      <div className="relative ml-[-4px]">
         <FontAwesomeIcon icon={faSearch} className="text-[#9FA9B4] absolute top-[28%] left-[190px] h-6" />
-      <input type="text" placeholder="Search movies" className="outline bg-white rounded-xl px-5 py-1 my-3 shadow-xl" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
+      <input type="text" placeholder="Search movies" className="outline bg-white rounded-xl px-5 pb-[2px] my-3 shadow-xl" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
       </div>
         
       </div>
@@ -72,8 +74,8 @@ const MovieLists = () => {
             View details
           </Link>
          <button onClick={() => toggleFavoriteMovie(movie.id)}> 
-         <FontAwesomeIcon icon={faHeart} className={`heart  h-8 w-10 pt-3 
-         ${favoriteMovies.includes(movie.id) ? "text-red-600" : "text-white" }` } />
+         <FontAwesomeIcon icon={faHeart} className={`heart  h-8 w-6 pt-3 
+         ${favoriteMovies.includes(movie.id) ? "text-secondary-200" : "text-secondary-400" }` } />
         </button> 
           </div>
         </div> 
@@ -101,7 +103,11 @@ const MovieLists = () => {
           Next page
         </button>
       </div>
+
+     
     </main>
+     <Footer />
+     </>
   )
 }
 

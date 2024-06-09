@@ -1,7 +1,7 @@
 
 import { useQuery } from '@tanstack/react-query';
 import { useParams } from 'react-router-dom';
-import "../Styles/moviedetails.css"
+import "../../Styles/moviedetails.css"
 
 
 const Moviedetails = () => {
@@ -27,19 +27,19 @@ const Moviedetails = () => {
   if (error) {
     return <p className='text-red-600 font-bold text-lg'>Something went wrong</p>
   }
+  
   return (
     <>
     <div className='text-black bg-[#80878D] bg-gradient-to-r from-[#D1D3D4] via-[#adb4bb] to-[#a2a4a5] min-h-screen w-full pb-10'>
     <div className='justify-center items-center flex flex-col'>
 
-    <h1 className='details-header text-center font-bold text-2xl pt-5'>Movies details</h1>
+    <h1 className='details-header text-center font-bold text-2xl pt-5'>{movieDetails.title}</h1>
      
      <div className='card text-black bg-white lg:w-[700px] sm:w-[350px] ml-20 mt-5 shadow-lg'>
        {movieDetails && (
          <div className='card-body grid lg:md:grid-cols-2 sm:grid-cols-1 gap-6 text-sm'>
-           <div> <img src={`https://image.tmdb.org/t/p/w500/${movieDetails.poster_path}`} alt={movieDetails.title} className='w-[380px] h-[300px] rounded-sm' /></div>
+           <div> <img src={`https://image.tmdb.org/t/p/w500/${movieDetails.poster_path}`} alt={movieDetails.title} className='w-[380px] h-[400px] rounded-sm' /></div>
            <div className="leading-7"> 
-            <h1><span className='font-bold'>Title: </span>{movieDetails.title}</h1>
            <p><span className='font-bold'>Release date: </span>{movieDetails.release_date}</p>
            <p><span className='font-bold'> vote average: </span> {movieDetails.vote_average}</p>
            <p><span className='font-bold'>Overview: </span>{movieDetails.overview}</p> 

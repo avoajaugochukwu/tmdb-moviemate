@@ -1,9 +1,10 @@
 
-import Homepage from '../src/Pages/Homepage'
-import MovieLists from '../src/Pages/MovieLists'
+import Homepage from "./components/Pages/Homepage"
+import MovieLists from './components/Pages/MovieLists'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import Moviedetails from './Pages/Moviedetails'
-import PageNotFound from './Pages/PageNotFound'
+import Moviedetails from './components/Pages/Moviedetails'
+import PageNotFound from './components/Pages/PageNotFound'
+
 
 
 const App = () => { 

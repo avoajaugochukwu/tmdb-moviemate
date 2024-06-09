@@ -14,13 +14,15 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --primary-color: #FFFFFF;
+  --secondary-color-100: #6563D2;
+  --secondary-color-200: #060606;
+  --secondary-color-300: #BE9076;
+  --secondary-color-400: #D9D9D9;
 }
 
 body { 
-  background-image: url("../src/assets/photo-bg-img.avif");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-color: var(--primary-color);
   margin: 0;
   padding: 0;
   outline: none;

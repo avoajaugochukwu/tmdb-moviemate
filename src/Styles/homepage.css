@@ -1,5 +1,5 @@
 
-@media (max-width: 1000px) {
+@media (max-width: 700px) {
   .home-text {
    padding-top: 60px;
    padding-left: 40px;
@@ -7,52 +7,16 @@
   }
 } 
 
-/* Animation for the homepage texts */
-.home-text h1 {
-  animation: fadeInDown 1s ease-in-out;
-}
-
-.home-text p {
-  animation: fadeInUp 1s ease-in-out;
-  animation-delay: 0.5s;
-  opacity: 0;
-  animation-fill-mode: forwards;
-}
-
-
-.home-text a {
-  animation: fadeInUp 1s ease-in-out;
-  animation-delay: 1s;
-  opacity: 0;
-  animation-fill-mode: forwards;
-}
-
-/* Keyframe animations */
-@keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}  
 
 .get-started:hover {
-  background-color: #8E854C;
-  color: white;
-  border: 2px solid #4B86BD;
+  background-color: var(--primary-color);
+  color: var(--secondary-color-200);
+  border: 2px solid var(--secondary-color-100);
+} 
+
+.lucky:hover {
+  background-color: var(--secondary-color-100);
+  color: var(--primary-color);
+  border: 2px solid var(--secondary-color-100);
 }
 
