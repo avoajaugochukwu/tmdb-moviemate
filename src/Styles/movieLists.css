@@ -6,11 +6,9 @@
   margin-top: 10px;
   
  } 
- .detail {
-  margin-bottom: 18px;
- }
+ 
  .heart {
-  padding-bottom: 5px !important;
+  padding-bottom: 220px !important;
  }
  
  .movie-lists {
@@ -27,31 +25,11 @@
  
 }
  
-.details-button {
-  transition: background-color 0.3s, color 0.3s, border 0.3s;
-
-} 
+ 
 
 .details-button:hover {
-  background-color: #e4e9ed;
-  color: black;
-  border: 1px solid #80878D;
-  animation: hoverEffect 0.7s ease-in-out;
-
+  text-decoration: underline;
+  
 } 
 
-
-
-@keyframes hoverEffect {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
-
-}
 

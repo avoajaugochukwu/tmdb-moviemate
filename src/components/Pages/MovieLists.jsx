@@ -37,7 +37,7 @@ const MovieLists = () => {
   )
   .slice(0, moviePerPage);
 
-  
+
   if (isLoading) {
     return <div className='text-white'>
     <span className="loading loading-spinner loading-xs"></span>
@@ -68,16 +68,19 @@ const MovieLists = () => {
       {displayMovies.length === 0 && <p className="text-black text-center col-span-full font-semibold text-2xl">Movie not found</p>}
         {displayMovies?.map((movie) => (
         <div key={movie.id} className="movie-conrtainer justify-center bg-[#ffffff8b] rounded-lg shadow-lg w-[280px] h-[350px] mx-3 my-3">
-          <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} className="w-full h-[280px] rounded-t-lg" />
-          <div className="detail flex flex-row gap-8 mt-2 ml-4">
-          <Link to={`/movie/${movie.id}`} className="details-button bg-white text-sm text-[#2A303C] w-[100px] h-[30px] text-center pt-1 ml-5 mt-3  rounded-md">
-            View details
+          
+          <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} className="w-full h-[250px] rounded-t-lg" />
+
+          <div className="detail flex justify-between">
+          <Link to={`/movie/${movie.id}`} className="details-button text-sm mt-3 ml-1 text-secondary-100">
+            {movie.title}
           </Link>
          <button onClick={() => toggleFavoriteMovie(movie.id)}> 
-         <FontAwesomeIcon icon={faHeart} className={`heart  h-8 w-6 pt-3 
+         <FontAwesomeIcon icon={faHeart} className={`heart  h-8 w-6 mt-2 pr-2 
          ${favoriteMovies.includes(movie.id) ? "text-secondary-200" : "text-secondary-400" }` } />
         </button> 
           </div>
+          <p className="text-xs">{movie.overview.slice(0, 80)}...</p>
         </div> 
       ))}
         
