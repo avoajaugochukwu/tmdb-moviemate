@@ -3,15 +3,14 @@ import useStore from "../../store"
 import { Link } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome" 
 import { faHeart } from "@fortawesome/free-solid-svg-icons"
-import { faSearch } from "@fortawesome/free-solid-svg-icons/faSearch"
 import "../../Styles/movieLists.css"
-import Header from "../Layouts/Header"
+import MovieListHeader from "../Layouts/MovieListHeader"
 import { useState } from "react"
-import Footer from "../Layouts/Footer"
+
 
 const MovieLists = () => { 
   const [page, setPage] = useState(1);
-  const moviePerPage = 16 //total movie per page
+  const moviePerPage = 15 //total movie per page
   
   const { data, isLoading, error} = useQuery({
     queryFn: () => 
@@ -28,7 +27,7 @@ const MovieLists = () => {
 
   const toggleFavoriteMovie = useStore((state) => state.toggleFavoriteMovie);
 
-  const { searchTerm, setSearchTerm } = useStore((state) => ({searchTerm: state.searchTerm, setSearchTerm: state.setSearchTerm})); 
+ const { searchTerm, setSearchTerm } = useStore((state) => ({searchTerm: state.searchTerm, setSearchTerm: state.setSearchTerm})); 
   
   
   const displayMovies = data?.results
@@ -54,19 +53,16 @@ const MovieLists = () => {
   return (
     <>
     <main className=" min-h-screen min-w-full pb-10">
-      <Header />
+      <MovieListHeader />
+      
       <div className="flex justify-start flex-col items-start ml-[63px]">
-      <h1 className="text-black font-extrabold text-2xl mt-2">Lists of movies</h1>
-      <div className="relative ml-[-4px]">
-        <FontAwesomeIcon icon={faSearch} className="text-[#9FA9B4] absolute top-[28%] left-[190px] h-6" />
-      <input type="text" placeholder="Search movies" className="outline bg-white rounded-xl px-5 pb-[2px] my-3 shadow-xl" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
-      </div>
+      <h1 className="text-black font-extrabold text-2xl lg:ml-[42px]">Lists of movies</h1>
       </div>
     
-      <div className="movie-lists flex flex-wrap justify-center mr-5">
+      <div className="movie-lists flex flex-wrap gap-5 justify-center mr-5">
       {displayMovies.length === 0 && <p className="text-black text-center col-span-full font-semibold text-2xl">Movie not found</p>}
         {displayMovies?.map((movie) => (
-        <div key={movie.id} className="movie-conrtainer justify-center bg-[#ffffff8b] rounded-lg shadow-lg w-[280px] h-[350px] mx-3 my-3">
+        <div key={movie.id} className="movie-conrtainer justify-center bg-[#ffffff8b]  rounded-lg shadow-lg w-[320px] h-[350px] mx-3 my-3">
           
           <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} className="w-full h-[250px] rounded-t-lg" />
 
@@ -79,7 +75,7 @@ const MovieLists = () => {
          ${favoriteMovies.includes(movie.id) ? "text-secondary-200" : "text-secondary-400" }` } />
         </button> 
           </div>
-          <p className="text-xs ml-2 mb-2">{movie.overview.slice(0, 78)}....</p>
+          <p className="text-xs ml-2 mb-2">{movie.overview.slice(0, 92)}....</p>
           <div className="flex justify-between ml-2 mr-3">
             <p className="text-xs"><span className="text-secondary-300">{movie.vote_average}</span> ({movie.vote_count}) </p>
             <p className="text-xs"> {movie.release_date}</p>
@@ -113,7 +109,7 @@ const MovieLists = () => {
 
      
     </main>
-     <Footer />
+    
      </>
   )
 }
