@@ -61,7 +61,6 @@ const MovieLists = () => {
         <FontAwesomeIcon icon={faSearch} className="text-[#9FA9B4] absolute top-[28%] left-[190px] h-6" />
       <input type="text" placeholder="Search movies" className="outline bg-white rounded-xl px-5 pb-[2px] my-3 shadow-xl" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
       </div>
-        
       </div>
     
       <div className="movie-lists flex flex-wrap justify-center mr-5">
@@ -72,16 +71,21 @@ const MovieLists = () => {
           <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} className="w-full h-[250px] rounded-t-lg" />
 
           <div className="detail flex justify-between">
-          <Link to={`/movie/${movie.id}`} className="details-button text-sm mt-3 ml-1 text-secondary-100">
+          <Link to={`/movie/${movie.id}`} className="details-button text-sm mt-3 ml-2 text-secondary-100">
             {movie.title}
           </Link>
          <button onClick={() => toggleFavoriteMovie(movie.id)}> 
-         <FontAwesomeIcon icon={faHeart} className={`heart  h-8 w-6 mt-2 pr-2 
+         <FontAwesomeIcon icon={faHeart} className={`heart  h-6 w-5 mt-2 pr-2 
          ${favoriteMovies.includes(movie.id) ? "text-secondary-200" : "text-secondary-400" }` } />
         </button> 
           </div>
-          <p className="text-xs">{movie.overview.slice(0, 80)}...</p>
+          <p className="text-xs ml-2 mb-2">{movie.overview.slice(0, 78)}....</p>
+          <div className="flex justify-between ml-2 mr-3">
+            <p className="text-xs"><span className="text-secondary-300">{movie.vote_average}</span> ({movie.vote_count}) </p>
+            <p className="text-xs"> {movie.release_date}</p>
+          </div>
         </div> 
+    
       ))}
         
       </div>
