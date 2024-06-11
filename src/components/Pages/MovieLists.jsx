@@ -11,6 +11,7 @@ import { useState } from "react"
 
 const MovieLists = () => { 
   const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(44493);
   const moviePerPage = 15 //total movie per page
   
   const { data, isLoading, error} = useQuery({
@@ -22,6 +23,9 @@ const MovieLists = () => {
   refetchOnMount: true,
   refetchOnReconnect: true,
   staleTime: 1000 * 60 * 15,
+  onSuccess: (data) => {
+    setTotalPages(data.total_pages);
+  }
   }); 
 
   const favoriteMovies = useStore((state) => state.favoriteMovies);
@@ -99,12 +103,12 @@ const MovieLists = () => {
           Previous
         </button>
         <span className=" mx-2 my-2 text-black">
-          Page {page} / {data?.total_pages}
+          Page {page} / {totalPages}
         </span>
         <button
           className="bg-white text-[#2A303C] px-3 py-1 mx-2 rounded-md shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
           onClick={() => setPage((prev) => prev + 1)}
-          disabled={page === data?.total_pages}
+          disabled={page === totalPages}
         >
           Next page
         </button>
