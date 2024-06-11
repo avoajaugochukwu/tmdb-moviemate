@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import "../../Styles/movieListheader.css"
 
 const Header = () => {
 
@@ -6,7 +7,7 @@ const Header = () => {
     <header className='container text-secondary-100 min-w-full flex bg-white'>
     <div className="navbar bg-base-100">
     <div className="flex-1">
-    <Link to={"/"} className="btn btn-ghost text-2xl font-bold ml-20">MovieMate</Link>
+    <Link to={"/"} className="header-list-text btn btn-ghost text-2xl font-bold ml-20">MovieMate</Link>
   </div>
 </div>
 </header>

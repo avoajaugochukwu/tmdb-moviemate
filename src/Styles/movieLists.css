@@ -1,31 +1,9 @@
 @media (max-width: 500px) {
- .movie-conrtainer  {
-  display: grid;
-  grid-template-columns: 1fr;
-  justify-content: center;
-  margin-top: 10px;
-  
- } 
- 
- .heart {
-  padding-bottom: 220px !important;
- }
- 
- .movie-lists {
-  justify-content: center;
-  place-items: center;
-  margin-top: 10px;
-  width: 100%;
- 
- } 
- .movie-lists img {
-  width: 100%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
- } 
- 
+main .items-start {
+  align-items: center;
 }
- 
- 
+}
+
 
 .details-button:hover {
   text-decoration: underline;

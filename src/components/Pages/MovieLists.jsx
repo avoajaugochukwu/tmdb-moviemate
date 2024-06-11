@@ -8,6 +8,7 @@ import MovieListHeader from "../Layouts/MovieListHeader"
 import { useState } from "react"
 
 
+
 const MovieLists = () => { 
   const [page, setPage] = useState(1);
   const moviePerPage = 15 //total movie per page
@@ -55,7 +56,7 @@ const MovieLists = () => {
     <main className=" min-h-screen min-w-full pb-10">
       <MovieListHeader />
       
-      <div className="flex justify-start flex-col items-start ml-[63px]">
+      <div className="flex justify-start flex-col items-start lg:ml-[63px]">
       <h1 className="text-black font-extrabold text-2xl lg:ml-[42px]">Lists of movies</h1>
       </div>
     
@@ -75,11 +76,14 @@ const MovieLists = () => {
          ${favoriteMovies.includes(movie.id) ? "text-secondary-200" : "text-secondary-400" }` } />
         </button> 
           </div>
-          <p className="text-xs ml-2 mb-2">{movie.overview.slice(0, 92)}....</p>
-          <div className="flex justify-between ml-2 mr-3">
-            <p className="text-xs"><span className="text-secondary-300">{movie.vote_average}</span> ({movie.vote_count}) </p>
-            <p className="text-xs"> {movie.release_date}</p>
+          <div className="grid grid-cols-1">
+            <p className="text-xs ml-2 mb-2">{movie.overview.slice(0, 92)}....</p>
+            <div className="flex justify-between ml-2 mr-3">
+              <p className="text-xs"><span className="text-secondary-300">{movie.vote_average}</span> ({movie.vote_count}) </p>
+              <p className="text-xs"> {movie.release_date}</p>
+            </div>
           </div>
+          
         </div> 
     
       ))}
