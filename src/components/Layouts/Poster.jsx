@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 
 import { useQuery } from '@tanstack/react-query'
+import "../../Styles/movieposter.css"
 
 const Poster = ({movieId}) => {
   const {data, isLoading, error} = useQuery({
@@ -28,8 +29,8 @@ const Poster = ({movieId}) => {
 
 
   return (
-    <div >
-    <img src={posterurl} alt="movie poster" className='h-[200px] w-[320px] shadow-xl transform transition-transform duration-300 hover:scale-[1.08]' />
+    <div className='movie-poster'>
+    <img src={posterurl} alt="movie poster" className=' lg:h-[200px] lg:w-[320px] sm:w-[200px] sm:h-[150px] shadow-xl transform transition-transform duration-300 hover:scale-[1.08]' />
   </div>
   )
 }

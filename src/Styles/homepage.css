@@ -1,9 +1,20 @@
 
-@media (max-width: 700px) {
+@media (max-width: 640px) {
   .home-text {
-   padding-top: 60px;
-   padding-left: 40px;
-   
+  font-size: 47px !important;
+  margin-left: 11px !important;
+  } 
+  .getStarted-container {
+    margin-left: 11px !important;
+  
+  }
+  .poster-1 {
+    margin-right: 155px;
+    margin-top: 15px;
+  } 
+  .poster-2 {
+    margin-left: 190px;
+    margin-top: -20px !important;
   }
 } 
 

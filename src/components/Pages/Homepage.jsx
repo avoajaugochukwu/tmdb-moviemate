@@ -8,27 +8,27 @@ const Homepage = () => {
   return (
     <> 
        <Headers /> 
-        <main className="container flex flex-col mx-auto h-screen">
-          <div className='text-8xl font-semibold text-secondary-200 ml-14'>
+        <main className="container flex flex-col h-screen w-screen">
+          <div className='home-text lg:text-8xl sm:text-6xl font-semibold text-secondary-200 ml-14'>
           <h1 className="">Learn more about</h1>
         <p>your favourite</p>
         <p>movies</p>
           </div>
         
        
-        <div className='flex gap-7 ml-16 mt-5'>
+        <div className='getStarted-container flex gap-7 ml-16 mt-5'>
 
           <Link to={"/movies"} className="get-started text-white bg-secondary-100 py-1 px-5 text-sm shadow-inner">Get started</Link>
           
-          <Link to={"/movies"} className="lucky hover:bg-secondary-100  text-secondary-200 border border-secondary-100 shadow-inner py-1 px-5 text-sm">I am feeling lucky</Link>
+          <Link to={"/movies"} className="lucky hover:bg-secondary-100  text-secondary-200 border border-secondary-100 shadow-inner py-1 px-3 text-sm">I am feeling lucky</Link>
 
         </div>
 
-          <div className='pb-14'>
-          <div className='flex justify-center lg:mt-[-90px] lg:ml-[160px] sm:mt-5 sm:ml-3'>
+          <div className='pb-10'>
+          <div className='poster-1 flex justify-center lg:mt-[-90px] lg:ml-[160px] sm:mr-[50px] sm:mt-6 sm:ml-3'>
            <Poster movieId={183} />
           </div>
-          <div className='flex lg:justify-end sm:justify-center mr-20 lg:mt-0'>
+          <div className='poster-2 flex lg:justify-end sm:justify-end lg:mr-[105px] sm:mr-10 lg:mt-0'>
           <Poster movieId={20} />
           </div>
 

@@ -59,7 +59,7 @@ const Moviedetails = () => {
             <div>
             <button onClick={() => toggleFavoriteMovie(movieDetails.id)}> 
          <FontAwesomeIcon icon={faHeart} className={`heart  h-8 w-7 pr-3 
-         ${favoriteMovies.includes(Moviedetails.id) ? "text-secondary-200" : "text-secondary-400" }` } />
+         ${favoriteMovies.includes(movieDetails.id) ? "text-secondary-200" : "text-secondary-400" }` } />
         </button>
             </div>
            </div>
