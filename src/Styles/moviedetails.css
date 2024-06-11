@@ -1,6 +1,6 @@
 @media (max-width: 640px) {
   .card {
-   width: 350px;
+   width: 330px;
   
   } 
   .details-header {
@@ -10,7 +10,7 @@
   } 
   .back-button {
     margin-left: 100px !important;
-    margin-bottom: 10px !important;
+    margin-bottom: 15px !important;
   }
  }
  

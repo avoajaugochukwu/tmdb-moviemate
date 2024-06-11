@@ -1,9 +1,29 @@
 @media (max-width: 640px) {
  header .navbar {
-  margin-left: -49px;
+  margin-left: -260px;
   background-color: white;
   
  } 
 
  
-}
+} 
+
+@media (max-width: 550px) {
+  header .navbar {
+   margin-left: -173px;
+   background-color: white;
+   
+  } 
+ 
+  
+ } 
+
+ @media (max-width: 380px) {
+  header .navbar {
+   margin-left: -140px;
+   background-color: white;
+   
+  } 
+ 
+  
+ }
