@@ -42,34 +42,34 @@ const Moviedetails = () => {
     <>
     <Header />
    
-    <div className='text-black bg-white min-h-screen w-full pb-10'>
-    <div className='justify-center items-center flex flex-col'>
+    <div className='text-black bg-white min-h-screen w-full'>
+    <div className='justify-center items-center flex flex-col flex-1'>
 
     <h1 className='details-header text-center font-bold text-2xl mt-2'>{movieDetails.title}</h1>
      
-     <div className='card text-black bg-white lg:w-[700px] sm:w-[350px] h-[340px]  mt-4 shadow-md'>
+     <div className='card text-black bg-white lg:w-[820px] sm:w-[380px] lg:h-[340px]  mt-4 shadow-md'>
        {movieDetails && (
          <div className=' grid lg:md:grid-cols-2 sm:grid-cols-1 gap-6 text-sm'>
            <div> <img src={`https://image.tmdb.org/t/p/w500/${movieDetails.poster_path}`} alt={movieDetails.title} className='w-full h-[340px] rounded' /></div>
-           <div className=" flex flex-col justify-between"> 
+           <div className=" flex flex-col justify-between sm:pl-2"> 
 
-           <div className='flex justify-between gap-10'>
+           <div className='flex justify-between gap-12 pl-2'>
             <div><p>{movieDetails.overview}</p> </div>
            
             <div>
             <button onClick={() => toggleFavoriteMovie(movieDetails.id)}> 
-         <FontAwesomeIcon icon={faHeart} className={`heart  h-6 w-5 mt-2 pr-2 
-         ${favoriteMovies.includes(MovieDetails.id) ? "text-secondary-200" : "text-secondary-400" }` } />
+         <FontAwesomeIcon icon={faHeart} className={`heart  h-8 w-7 pr-3 
+         ${favoriteMovies.includes(Moviedetails.id) ? "text-secondary-200" : "text-secondary-400" }` } />
         </button>
             </div>
            </div>
 
-             <div>
-             <p><span className='font-bold'>Genres: </span>{movieDetails.genres.map((genre) => genre.name).join(", ")}</p>
+             <div className='lg:mt-20 ml-2 leading-10'>
+             <p>{movieDetails.genres.map((genre) => genre.name).join(", ")}</p>
              </div>
 
-           <div className='flex justify-between'>
-           <p><span>{movieDetails.vote_average} </span>({movieDetails.vote_count})</p>
+           <div className='flex justify-between mb-3 ml-2'>
+           <p><span className='text-secondary-300'>{movieDetails.vote_average} </span>({movieDetails.vote_count})</p>
            <p className='mr-3'>{movieDetails.release_date}</p>
            </div>
            </div>
@@ -78,7 +78,10 @@ const Moviedetails = () => {
        )} 
      </div>
     </div>
-   <button className='bg-secondary-100 text-primary mt-8 px-7 py-1 ml-16' onClick={() => window.history.back()}>Go back</button>
+    <div className='mb-10'>
+    <button className='bg-secondary-100 text-primary mt-8 px-7 py-1 ml-16' onClick={() => window.history.back()}>Go back</button>
+    </div>
+   
     </div>
     </>
   )
