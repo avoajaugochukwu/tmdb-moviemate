@@ -1,5 +1,7 @@
 @media (max-width: 640px) {
  header .navbar {
   margin-left: -49px;
- }
+  background-color: white;
+  
+ } 
 }
