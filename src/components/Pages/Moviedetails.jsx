@@ -78,7 +78,7 @@ const Moviedetails = () => {
      </div>
     </div>
     <div className='mb-10'>
-    <button className='bg-secondary-100 text-primary mt-8 px-7 py-1 ml-16' onClick={() => window.history.back()}>Go back</button>
+    <button className='back-button bg-secondary-100 text-primary mt-8 px-7 py-1 ml-16' onClick={() => window.history.back()}>Go back</button>
     </div>
    
     </section>
