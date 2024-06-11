@@ -2,12 +2,11 @@
 import { useQuery } from '@tanstack/react-query';
 import { useParams } from 'react-router-dom';
 import "../../Styles/moviedetails.css"
-import Header from '../Layouts/Header';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome" 
 import { faHeart } from "@fortawesome/free-solid-svg-icons"
 import useStore from "../../store"
-
-
+import "../../Styles/movieListheader.css"
+import MovieListHeader from "../Layouts/MovieListHeader" 
 
 const Moviedetails = () => {
   const { movieId } = useParams() 
@@ -40,14 +39,14 @@ const Moviedetails = () => {
   
   return (
     <>
-    <Header />
+    <section className='text-black bg-white min-h-screen w-full'>
+    <MovieListHeader />
    
-    <div className='text-black bg-white min-h-screen w-full'>
     <div className='justify-center items-center flex flex-col flex-1'>
 
     <h1 className='details-header text-center font-bold text-2xl mt-2'>{movieDetails.title}</h1>
      
-     <div className='card text-black bg-white lg:w-[820px] sm:w-[380px] lg:h-[340px]  mt-4 shadow-md'>
+     <div className='card text-secondary-200 bg-white lg:w-[820px] sm:w-[380px] lg:h-[340px]  mt-4 shadow-md'>
        {movieDetails && (
          <div className=' grid lg:md:grid-cols-2 sm:grid-cols-1 gap-6 text-sm'>
            <div> <img src={`https://image.tmdb.org/t/p/w500/${movieDetails.poster_path}`} alt={movieDetails.title} className='w-full h-[340px] rounded' /></div>
@@ -82,7 +81,7 @@ const Moviedetails = () => {
     <button className='bg-secondary-100 text-primary mt-8 px-7 py-1 ml-16' onClick={() => window.history.back()}>Go back</button>
     </div>
    
-    </div>
+    </section>
     </>
   )
 }
