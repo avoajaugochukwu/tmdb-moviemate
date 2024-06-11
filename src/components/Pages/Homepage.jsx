@@ -24,7 +24,7 @@ const Homepage = () => {
 
         </div>
 
-          <div className='pb-10'>
+          <div className='pb-5'>
           <div className='poster-1 flex justify-center lg:mt-[-90px] lg:ml-[160px] sm:mr-[50px] sm:mt-6 sm:ml-3'>
            <Poster movieId={183} />
           </div>
