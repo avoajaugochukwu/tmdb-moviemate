@@ -1,10 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
-import useStore from "../../store";
+import useStore from "../store";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faStar } from "@fortawesome/free-solid-svg-icons";
-import "../../Styles/movieLists.css";
-import MovieListHeader from "../Layouts/MovieListHeader";
+import "../../src/Styles/movieLists.css";
+import MovieListHeader from "../components/Layouts/MovieListHeader";
 import { useState } from "react";
 
 const MovieLists = () => {

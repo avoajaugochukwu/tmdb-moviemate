@@ -1,8 +1,8 @@
-import Homepage from "./components/Pages/Homepage";
-import MovieLists from "./components/Pages/MovieLists";
+import Homepage from "./pages/Homepage";
+import MovieLists from "./pages/MovieLists";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Moviedetails from "./components/Pages/Moviedetails";
-import PageNotFound from "./components/Pages/PageNotFound";
+import Moviedetails from "./pages/Moviedetails";
+import PageNotFound from "./pages/PageNotFound";
 
 const App = () => {
   return (

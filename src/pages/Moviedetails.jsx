@@ -1,11 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
-import "../../Styles/moviedetails.css";
+import "../../src/Styles/moviedetails.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faStar } from "@fortawesome/free-solid-svg-icons";
-import useStore from "../../store";
-import "../../Styles/header.css";
-import Header from "../Layouts/Header";
+import useStore from "../store";
+import "../../src/Styles/header.css";
+import Header from "../components/Layouts/Header";
 
 const Moviedetails = () => {
   const { movieId } = useParams();

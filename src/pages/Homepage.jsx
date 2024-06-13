@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import Headers from "../Layouts/Header";
-import "../../Styles/homepage.css";
-import Poster from "../Layouts/Poster";
+import Headers from "../components/Layouts/Header";
+import "../../src/Styles/homepage.css";
+import Poster from "../components/Layouts/Poster";
 
 const Homepage = () => {
   return (

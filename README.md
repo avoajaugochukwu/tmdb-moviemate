@@ -1,8 +1,8 @@
 # MovieMate
 
-### MovieMate is a movie web application that leverages the TMDB (The Movie Database) API to display popular movies. The application is built with React, using Tailwind CSS for styling, Zustand for state management, and React Query for data fetching.
+## MovieMate is a movie web application that leverages the TMDB (The Movie Database) API to display popular movies. The application is built with React, using Tailwind CSS for styling, Zustand for state management, and React Query for data fetching
 
-**Features**
+### Features
 
 - Browse popular movies from TMDB
 - Search for movies by title
@@ -12,7 +12,7 @@
 
 ## Contributing
 
-### Contributions are welcome! Please follow these steps to contribute:
+### Contributions are welcome! Please follow these steps to contribute
 
 - Fork the repository.
 - Create a new branch: git checkout -b feature-name.
