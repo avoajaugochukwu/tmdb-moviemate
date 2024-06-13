@@ -23,7 +23,7 @@ const Homepage = () => {
           <Link to={"/movies"} className="lucky hover:bg-secondary-100  text-secondary-200 border border-secondary-100 shadow-inner py-1 px-3 text-sm rounded">I am feeling lucky</Link>
 
         </div>
-          <div className='pb-5'>
+          <div className='pb-5 bg-inherit'>
           <div className='poster-1 flex justify-center lg:mt-[-90px] lg:ml-[130px] sm:mr-[50px] sm:mt-6 sm:ml-36'>
            <Poster movieId={183} />
           </div>
