@@ -8,7 +8,7 @@ const Homepage = () => {
   return (
     <> 
        <Headers /> 
-        <main className="container flex flex-col h-screen w-screen">
+        <main className="container flex flex-col h-screen w-screen bg-primary">
           <div className='home-text lg:text-8xl sm:text-6xl font-semibold text-secondary-200 lg:ml-20 sm:ml-[15px]'>
           <h1>Learn more about</h1>
         <p>your favourite</p>
