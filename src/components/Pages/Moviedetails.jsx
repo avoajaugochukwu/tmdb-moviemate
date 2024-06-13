@@ -6,7 +6,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faHeart } from "@fortawesome/free-solid-svg-icons"
 import useStore from "../../store"
 import "../../Styles/header.css"
-import Header from '../Layouts/Header';
+import Header from '../Layouts/Header'; 
+
 
 const Moviedetails = () => {
   const { movieId } = useParams() 
@@ -22,7 +23,6 @@ const Moviedetails = () => {
   const favoriteMovies = useStore((state) => state.favoriteMovies);
 
   const toggleFavoriteMovie = useStore((state) => state.toggleFavoriteMovie);
-
 
   if (isLoading) {
     return <div className='text-white'>
@@ -78,7 +78,7 @@ const Moviedetails = () => {
      </div>
     </div>
     <div className='bg-inherit'>
-    <button className='back-button bg-primary text-secondary-200 hover:bg-secondary-100 hover:text-primary border border-secondary-100 shadow-lg mt-8 px-7 py-1 ml-16' onClick={() => window.history.back()}>Go back</button>
+    <button className='back-button bg-primary text-secondary-200 hover:bg-secondary-100 hover:text-primary border border-secondary-100 shadow-inner rounded mt-8 px-7 py-1 ml-16' onClick={() => window.history.back()}>Go back</button>
     </div>
    
     </section>
