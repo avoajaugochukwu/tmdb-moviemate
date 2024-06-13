@@ -60,7 +60,7 @@ const MovieLists = () => {
     <main className=" min-h-screen min-w-full pb-10">
       <MovieListHeader />
       
-      <h1 className="text-black font-extrabold text-2xl lg:ml-[42px] text-start">Lists of movies</h1>
+      <h1 className="text-black font-extrabold text-2xl lg:ml-[44px] md:ml-[25px] sm:ml-[25px] lg:md:sm:text-start ">Lists of movies</h1>
       
     
       <div className="movie-lists flex flex-wrap gap-10 justify-center mr-5">

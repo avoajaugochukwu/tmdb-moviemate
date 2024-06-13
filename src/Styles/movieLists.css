@@ -1,7 +1,17 @@
-@media (max-width: 500px) {
-main .items-start {
-  align-items: center;
+@media (max-width: 640px) {
+main .text-2xl {
+  text-align: center;
 }
+
+.movie-conrtainer {
+  margin-left: 25px !important;
+  height: 565px !important;
+} 
+
+.details-button {
+  text-align: start !important;
+}
+
 }
 
 
@@ -9,5 +19,6 @@ main .items-start {
   text-decoration: underline;
   
 } 
+
 
 
