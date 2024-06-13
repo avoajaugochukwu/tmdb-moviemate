@@ -1,10 +1,7 @@
 /* eslint-disable no-undef */
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
@@ -17,14 +14,10 @@ export default {
           500: "#6A7587",
         },
       },
-     
     },
   },
-  plugins: [
-    require('daisyui'),
-  ],
+  plugins: [require("daisyui")],
   daisyui: {
-    themes: ["light", "dark", "cupcake", "dim",],
+    themes: ["light", "dark", "cupcake", "dim"],
   },
-}
-
+};

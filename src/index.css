@@ -1,5 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -14,17 +13,17 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  --primary-color: #FFFFFF;
-  --secondary-color-100: #6563D2;
+  --primary-color: #ffffff;
+  --secondary-color-100: #6563d2;
   --secondary-color-200: #060606;
   --secondary-color-300: red;
-  --secondary-color-400: #D9D9D9;
-  --secondary-color-500: #6A7587;
+  --secondary-color-400: #d9d9d9;
+  --secondary-color-500: #6a7587;
 }
 
-body { 
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  ;
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   background-color: var(--primary-color);
   margin: 0;
   padding: 0;
@@ -34,8 +33,4 @@ body {
   min-width: 100vw;
   min-height: 100vh;
   position: relative;
-  
-} 
-
-
-
+}
