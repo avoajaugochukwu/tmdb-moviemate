@@ -8,6 +8,10 @@
    text-wrap: wrap;
    
   } 
+
+  .overview-text {
+    font-size: 20px !important;
+  }
   .back-button {
     margin-left: 100px !important;
     margin-bottom: 15px !important;

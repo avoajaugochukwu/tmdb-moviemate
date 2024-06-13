@@ -53,7 +53,7 @@ const Moviedetails = () => {
            <div className=" flex flex-col justify-between sm:pl-2"> 
 
            <div className='flex justify-between gap-12 pl-2 mt-2'>
-            <div className='w-[70%]'><p className='text-[15px] leading-6 ml-3 text-secondary-500'>{movieDetails.overview}</p> </div>
+            <div className='w-[70%]'><p className='overview-text text-[15px] leading-6 ml-3 text-secondary-500'>{movieDetails.overview}</p> </div>
            
             <div>
             <button onClick={() => toggleFavoriteMovie(movieDetails.id)}> 
