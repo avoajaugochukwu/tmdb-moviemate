@@ -1,5 +1,8 @@
 
 @media (max-width: 640px) {
+  main {
+    background-color: inherit;
+  }
   .home-text {
   font-size: 47px !important;
   margin-left: 9px !important;
