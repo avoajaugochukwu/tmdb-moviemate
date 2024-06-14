@@ -62,7 +62,7 @@ const MovieLists = () => {
       <main className=" min-h-screen min-w-full pb-10">
         <MovieListHeader />
 
-        <h1 className="text-black font-extrabold text-2xl lg:ml-[44px] md:ml-[25px] sm:ml-[25px] lg:md:sm:text-start ">
+        <h1 className="text-black font-extrabold text-4xl mb-3 lg:ml-[44px] md:ml-[25px] sm:ml-[25px] lg:md:sm:text-start ">
           Lists of movies
         </h1>
 
@@ -70,12 +70,12 @@ const MovieLists = () => {
           {displayMovies?.map((movie) => (
             <div
               key={movie.id}
-              className="movie-conrtainer justify-center bg-[#ffffff8b]  rounded-lg border w-[350px] h-[545px] mx-3 my-3"
+              className="movie-conrtainer justify-center bg-[#ffffff8b]  rounded-lg border w-[350px] h-[660px] mx-3 my-3"
             >
               <img
                 src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
                 alt={movie.title}
-                className="w-full h-[400px] rounded-t-lg"
+                className="w-full h-[500px] rounded-t-lg"
               />
 
               <div className="detail flex justify-between">
@@ -98,8 +98,8 @@ const MovieLists = () => {
                 </button>
               </div>
               <div className="grid grid-cols-1">
-                <p className="text-sm ml-5 mb-2 text-secondary-500">
-                  {movie.overview.slice(0, 92)}....
+                <p className="text-sm mx-5 mb-2 text-secondary-500">
+                  {movie.overview.slice(0, 80)}....
                 </p>
                 <div className="flex justify-between mt-1 mx-5">
                   <div>
