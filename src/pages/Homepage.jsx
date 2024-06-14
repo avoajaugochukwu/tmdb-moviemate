@@ -1,19 +1,53 @@
+/* eslint-disable no-unused-vars */
 import { Link } from "react-router-dom";
-import Headers from "../components/Layouts/Header";
+import Header from "../components/Layouts/Header";
 import "../../src/Styles/homepage.css";
 import Poster from "../components/Layouts/Poster";
+import Button from "../components/Button";
+
+// you are using this to add margin to the left "lg:ml-20 sm:ml-[15px]" which is bad practise,
+// you should use left and right margin or padding. I prefer padding (px-20) on the out most div,
+// and make it uniform
 
 const Homepage = () => {
+
   return (
     <>
-      <Headers />
-      <main className="container flex flex-col h-screen w-screen bg-primary">
-        <div className="home-text lg:text-8xl sm:text-6xl font-semibold text-secondary-200 lg:ml-20 sm:ml-[15px]">
-          <h1>Learn more about</h1>
-          <p>your favourite</p>
-          <p>movies</p>
+      <Header />
+      {/* <main className="px-20 flex flex-col h-screen w-screen bg-primary"> */}{" "}
+      {/* Avoid unnecessary classes */}
+      {/* <div className="home-text lg:text-8xl sm:text-6xl font-semibold text-secondary-200 lg:ml-20 sm:ml-[15px]"> */}
+      <main className="mt-10 mb-20 flex">
+        <div className="w-1/2">
+          <h1 className="text-2xl md:text-4xl lg:text-7xl mt-36">
+            Learn more about your favourite movies
+          </h1>
+          {/*  */}
+          <div className="mt-10 flex gap-8">
+            <Link to={"/movies"}>
+              <Button variant="primary">Get Started</Button>
+            </Link>
+            <Link to={"/movies"}>
+              <Button variant="outline">I am feeling lucky</Button>
+            </Link>
+          </div>
         </div>
-
+        {/* -------------------------------------------------- */}
+        <div className="w-1/2">
+          {/* https://tailwindcss.com/docs/grid-column */}
+          <div className="grid grid-cols-6 gap-1">
+            <div className="col-start-1 col-span-3">
+              <Poster movieId={183} />
+            </div>
+            <div className="col-start-1 col-end-3"></div>
+            <div className="col-end-7 col-span-3">
+              <Poster movieId={20} />
+            </div>
+          </div>
+        </div>
+      </main>
+      {/* ------------- */}
+      {/* <main className="px-5 md:px-20">
         <div className="getStarted-container flex gap-7 lg:ml-20 sm:ml-5 mt-5">
           <Link
             to={"/movies"}
@@ -37,7 +71,7 @@ const Homepage = () => {
             <Poster movieId={20} />
           </div>
         </div>
-      </main>
+      </main> */}
     </>
   );
 };

@@ -1,20 +1,23 @@
+/* eslint-disable no-unused-vars */
 import { Link } from "react-router-dom";
-import "../../Styles/header.css";
+// import "../../Styles/header.css";
+import logo from "../../assets/svg/logo.svg";
+
+{
+  /* "px-5 md:px-20" use 5px for smaller screens, from md screen which is tablet up use 20px  */
+}
+{
+  /* Since you are using 'Link' you don't need to use button in the css, because it adds a background on hover */
+}
 
 const Header = () => {
   return (
-    <header className="container text-secondary-100 min-w-full flex bg-white">
-      <div className="navbar bg-base-100">
-        <div className="flex-1">
-          <Link
-            to={"/"}
-            className="btn btn-ghost text-2xl font-bold lg:ml-16 sm:ml-[-7px]"
-          >
-            MovieMate
-          </Link>
-        </div>
-      </div>
-    </header>
+    <div className="my-5">
+      <Link to={"/"} className="flex gap-3 w-20">
+        <img src={logo} alt="logo" className="h-10 w-10" />
+        <p className="text-[#a855f7] text-2xl">MovieMate</p>
+      </Link>
+    </div>
   );
 };
 
