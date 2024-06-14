@@ -68,7 +68,7 @@ const Moviedetails = () => {
                 <div className=" flex flex-col justify-between sm:pl-2">
                   <div className="flex justify-between gap-12 pl-2 mt-2">
                     <div className="w-[70%]">
-                      <p className="overview-text lg:text-[15px] sm:md:text-[16px] leading-6 ml-3 text-secondary-500">
+                      <p className="overview-text lg:text-[16px] sm:md:text-[16px] leading-6 ml-3 text-secondary-500">
                         {movieDetails.overview}
                       </p>{" "}
                     </div>
@@ -90,7 +90,7 @@ const Moviedetails = () => {
                     </div>
                   </div>
                   <div className=" ml-2 leading-10">
-                    <p className="movie-genre lg:sm:md:text-[12px] mt-2 mb-1 ml-3 text-secondary-500">
+                    <p className="movie-genre lg:sm:md:text-[14px] mt-2 mb-1 ml-3 text-secondary-500">
                       {movieDetails.genres
                         .map((genre) => genre.name)
                         .join(", ")}
